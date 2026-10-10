@@ -1,6 +1,6 @@
 """
 tests/test_excel_processor.py
-─────────────────────────────
+-----------------------------
 Automated test suite verifying the hostel-to-canteen register generator.
 
 Tests cover:
@@ -53,9 +53,9 @@ def _create_sample_excel(rows: list[list], sheet_name: str = "Sheet1") -> Path:
     return Path(tmp.name)
 
 
-# ─────────────────────────────────────────────────────────────
+# -------------------------------------------------------------
 # Core Acceptance Tests
-# ─────────────────────────────────────────────────────────────
+# -------------------------------------------------------------
 
 def test_acceptance_three_students_flow():
     """
@@ -227,9 +227,9 @@ def test_missing_required_column_raises_error():
         output_file.unlink(missing_ok=True)
 
 
-# ─────────────────────────────────────────────────────────────
+# -------------------------------------------------------------
 # Sample Files Test (if available in directory)
-# ─────────────────────────────────────────────────────────────
+# -------------------------------------------------------------
 
 SAMPLE_DIR = Path(__file__).parent.parent
 SAMPLE_FILES = [

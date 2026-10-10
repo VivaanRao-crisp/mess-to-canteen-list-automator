@@ -1,6 +1,6 @@
 """
 validator.py
-────────────
+------------
 Deterministic validation check for generated canteen register files.
 Verifies structure, row counts, cell merges, and data fidelity against the source.
 """

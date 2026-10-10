@@ -1,6 +1,6 @@
 """
 excel_processor.py
-──────────────────
+------------------
 Reads a hostel student list Excel file and creates a print-ready canteen register.
 
 Workflow:
@@ -29,9 +29,9 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 
-# ─────────────────────────────────────────────────────────────
+# -------------------------------------------------------------
 # Recognized Header Synonyms
-# ─────────────────────────────────────────────────────────────
+# -------------------------------------------------------------
 
 ROLL_SYNONYMS = {
     "roll no", "roll number", "roll", "rollno", "rollnumber",
@@ -202,7 +202,7 @@ def generate_canteen_register(
     ws = wb.active
     ws.title = "Canteen Register"
 
-    # ── Styling Definitions ───────────────────────────────────
+    # -- Styling Definitions -----------------------------------
     FONT_FAMILY = "Calibri"
     header_font = Font(name=FONT_FAMILY, size=11, bold=True, color="FFFFFF")
     data_font = Font(name=FONT_FAMILY, size=10, bold=False, color="000000")
@@ -222,7 +222,7 @@ def generate_canteen_register(
     align_center = Alignment(horizontal="center", vertical="center", wrap_text=True)
     align_left = Alignment(horizontal="left", vertical="center", wrap_text=True)
 
-    # ── Header Row (Row 1) ────────────────────────────────────
+    # -- Header Row (Row 1) ------------------------------------
     headers = [
         ("Roll Number", 16),
         ("Name", 32),
@@ -239,7 +239,7 @@ def generate_canteen_register(
         cell.border = thin_border
         ws.column_dimensions[get_column_letter(col_idx)].width = width
 
-    # ── Student Rows (2 rows per student) ─────────────────────
+    # -- Student Rows (2 rows per student) ---------------------
     ROW_HEIGHT = 23
 
     for idx, student in enumerate(students):
@@ -302,7 +302,7 @@ def generate_canteen_register(
         cell_rec_2.border = thin_border
         cell_rec_2.alignment = align_center
 
-    # ── Page & Print Setup ────────────────────────────────────
+    # -- Page & Print Setup ------------------------------------
     ws.sheet_view.showGridLines = True
     ws.freeze_panes = "A2"  # Freeze header row on scroll
 

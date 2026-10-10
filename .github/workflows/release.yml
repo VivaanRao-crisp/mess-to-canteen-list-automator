@@ -37,6 +37,9 @@ jobs:
 
       - name: Run automated test suite on Windows runner
         shell: bash
+        env:
+          PYTHONIOENCODING: utf-8
+          PYTHONUTF8: "1"
         run: |
           pytest -v
           python run_acceptance_test.py
