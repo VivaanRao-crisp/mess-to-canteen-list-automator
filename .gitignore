@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+.venv_build/
+env/
+venv/
+ENV/
+
+# PyInstaller / Build artifacts
+build/
+dist/*.exe
+*.manifest
+*.spec.bak
+
+# Testing & temp outputs
+.pytest_cache/
+sample_hostel_input.xlsx
+sample_canteen_register_output.xlsx
+sample_register_OUTPUT.xlsx
+canteen_register_*.xlsx
+test_out_*.xlsx
+test_run.sh
+inspect_files.py
+
+# macOS & OS files
+.DS_Store
+Thumbs.db

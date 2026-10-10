@@ -4,7 +4,19 @@ A deterministic, lightweight tool that converts a hostel's monthly student Excel
 
 ---
 
-## 📋 What It Does
+## 📥 Download for Windows (No Python Needed)
+
+Hostel staff can download the standalone Windows application directly from the **[GitHub Releases Page](https://github.com/VivaanRao-crisp/mess-to-canteen-list-automator/releases)**:
+
+1. Go to **[Releases](https://github.com/VivaanRao-crisp/mess-to-canteen-list-automator/releases)**.
+2. Under **Assets**, click to download **`HostelRegisterGenerator.exe`**.
+3. Double-click the downloaded `.exe` to run the application immediately.
+
+> **Note on Windows Security**: Since the `.exe` is built freshly from source on GitHub Actions without an expensive commercial code-signing certificate, Windows SmartScreen may show an unrecognized app prompt on first launch (*"Windows protected your PC"*). Click **"More info"** and then **"Run anyway"**.
+
+---
+
+## 📋 What the Program Does
 
 When the hostel sends a new monthly student list:
 1. You select the original Excel file (`.xlsx`).
@@ -19,11 +31,11 @@ When the hostel sends a new monthly student list:
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Running from Source (macOS / Linux / Python)
 
 ### 1. Requirements
 
-Ensure you have Python 3.8+ installed. Install the single dependency (`openpyxl`):
+Ensure you have Python 3.8+ installed. Install the dependency (`openpyxl`):
 
 ```bash
 pip install -r requirements.txt
@@ -31,7 +43,7 @@ pip install -r requirements.txt
 
 ### 2. Run the Application
 
-Launch the simple desktop interface:
+Launch the desktop interface:
 
 ```bash
 python3 main.py
@@ -69,29 +81,24 @@ pytest -v
 
 ---
 
-## 📅 How to Use It Next Month
+## 🤖 Automated CI/CD (GitHub Actions)
 
-Next month when you receive a new hostel Excel file:
-1. Open the app: `python3 main.py`
-2. Select next month's file.
-3. Click **"Generate Canteen Register"**.
-4. Save it as `Canteen_Register_<Month>.xlsx`.
-5. Open the generated file and print directly (all page sizes, margins, repeated headers, and fit-to-width are already configured).
+A GitHub Actions workflow is configured in `.github/workflows/release.yml`. It runs on a `windows-latest` virtual machine to:
+1. Set up Python 3.11.
+2. Run automated tests and validation.
+3. Compile `HostelRegisterGenerator.exe` using PyInstaller.
+4. Automatically attach `HostelRegisterGenerator.exe` to the GitHub Release.
 
----
+### How to Trigger a New Release:
 
-## 📦 Optional: Packaging as a Standalone Executable
-
-If you want a standalone app that can be launched with a double-click without opening a terminal:
-
+**Via Git Tag**:
 ```bash
-pip install pyinstaller
-
-# On macOS:
-pyinstaller --noconsole --onefile --name "CanteenRegisterGenerator" main.py
-
-# On Windows:
-pyinstaller --noconsole --onefile --name "CanteenRegisterGenerator" main.py
+git tag v0.1.0-beta.1
+git push origin v0.1.0-beta.1
 ```
 
-The compiled standalone executable will be located inside the `dist/` folder.
+**Via GitHub Actions Web Interface**:
+1. Open the repository on GitHub.
+2. Click the **Actions** tab.
+3. Select **"Build & Release Windows Executable"**.
+4. Click **Run workflow**, enter the version (e.g. `v0.1.0-beta.1`), and click **Run**.

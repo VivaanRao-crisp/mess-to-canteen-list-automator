@@ -7,14 +7,25 @@ This application converts your monthly hostel student list Excel file
 into a print-ready canteen register formatted with 2 rows per student.
 
 
-1. HOW TO LAUNCH THE APPLICATION
+1. WHERE TO DOWNLOAD (FOR WINDOWS STAFF)
+----------------------------------------------------------------------
+Download "HostelRegisterGenerator.exe" directly from GitHub Releases:
+  https://github.com/VivaanRao-crisp/mess-to-canteen-list-automator/releases
+
+Click "HostelRegisterGenerator.exe" under Assets to download.
+No Python installation or setup is required.
+
+
+2. HOW TO LAUNCH THE APPLICATION
 ----------------------------------------------------------------------
 On Windows:
-  - Simply double-click "HostelRegisterGenerator.exe" (inside the "dist" folder).
-  - No installation, Python setup, or internet connection is required.
+  - Simply double-click the downloaded "HostelRegisterGenerator.exe".
+  - If Windows SmartScreen shows an unrecognized app prompt on first run,
+    click "More info" and then "Run anyway".
+  - The application opens immediately.
 
 
-2. HOW TO GENERATE A CANTEEN REGISTER
+3. HOW TO GENERATE A CANTEEN REGISTER
 ----------------------------------------------------------------------
 Step 1:
   Click the button:
@@ -39,7 +50,7 @@ Step 4:
   Click "Yes" when prompted to open the newly generated Excel file!
 
 
-3. WHAT THE GENERATED FILE LOOKS LIKE
+4. WHAT THE GENERATED FILE LOOKS LIKE
 ----------------------------------------------------------------------
 Each student occupies exactly TWO physical rows:
   • Roll Number  : Merged vertically across the student's 2 rows.
@@ -54,14 +65,14 @@ The file is print-ready for A4 paper:
   • Features clean cell borders and comfortable handwriting row height.
 
 
-4. SAFETY & INTEGRITY GUARANTEE
+5. SAFETY & INTEGRITY GUARANTEE
 ----------------------------------------------------------------------
   • Your original Excel file is NEVER modified or overwritten.
   • The program reads the data directly and saves a brand-new file.
   • Student order is preserved exactly as listed in the original file.
 
 
-5. HOW TO REBUILD THE EXECUTABLE (FOR DEVELOPERS)
+6. HOW TO REBUILD THE EXECUTABLE (FOR DEVELOPERS)
 ----------------------------------------------------------------------
 If you ever update the Python source code in the future:
   1. On any Windows PC with Python 3.8+ installed, open this folder.
