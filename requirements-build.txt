@@ -1,0 +1,4 @@
+# Dependencies for building the executable and running tests
+openpyxl>=3.1.0
+pyinstaller>=6.0.0
+pytest>=7.0.0
